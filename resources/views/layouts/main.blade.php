@@ -14,9 +14,14 @@
         echo $utente->getName() . "<br>";
         echo $utente->getEmail() . "<br>";
         date_default_timezone_set("Europe/Rome");
-        echo date("i")       
+        echo "La data di oggi è " . date("d-m-Y") . " e sono le ore " . date("H:i:s");
     @endphp
     <h3>Info Food</h3>
     @dump($croccantini)
+
+    @php
+        $utente->setPosition(4562.6, 46587112.0010);
+    @endphp
+    @dump($utente)
 </body>
 </html>

@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+trait Position{
+    protected float $lat;
+    protected float $lng;
+
+    public function getAddress(){
+        return $this->lat . " - " . $this->lng;
+    }
+
+    public function setPosition(float $lat, float $lng){
+        $this->lat = $lat;
+        $this->lng = $lng;
+    }
+
+}
+
 /**
  * @param Product A new object of Product class
  */
@@ -108,6 +124,8 @@ class CreditCard{
  * @param User A new object of User class
  */
 class User{
+    Use Position;
+
     protected string $firstName;
     protected string $lastName;
     protected int $birthYear;
@@ -182,6 +200,6 @@ Route::get('/', function () {
 Route::get('/main', function () {
     $card = new CreditCard("1234567890123456", 2025, 123, "Deutsche Bank", 500);
     $utente = new User("Luca", "Rossi", 1998, "luca.rossi@gmail.com", "l.rossi2022", true, $card, null, []);
-    $croccantini = new Food("5kg", 2025/04/02, "croccantini", "Food", 9.99, "gatto");
+    $croccantini = new Food("5kg", "2025/04/02", "croccantini", "Food", 9.99, "gatto");
     return view('layouts.main', ["utente" => $utente], ["croccantini" => $croccantini]);
 })->name('main');
