@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h3>Info Utente</h3>
+    <h3>Info Utente prima dell'inserimento della posizione</h3>
     @dump($utente)
     @php
         echo $utente->getName() . "<br>";
@@ -22,6 +22,7 @@
     @php
         $utente->setPosition(4562.6, 46587112.0010);
     @endphp
+    <h3>Info Utente dopo inserimento posizione</h3>
     @dump($utente)
 
     @php
@@ -34,7 +35,7 @@
         }
     @endphp
 
-    <p>
+    <p><strong>Risultato con eccezione - </strong>
         @php
             // Testare eccezione su valore errato inserito
             try{
@@ -45,7 +46,7 @@
         @endphp
     </p>
 
-    <p>
+    <p><strong>Risultato senza eccezione - </strong>
         @php
             // Testare else su valore corretto inserito come argomento della funzione
             try{

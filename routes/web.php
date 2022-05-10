@@ -196,11 +196,11 @@ class User{
 }
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/main', function () {
+Route::get('/', function () {
     $card = new CreditCard("1234567890123456", 2025, 123, "Deutsche Bank", 500);
     $utente = new User("Luca", "Rossi", 1998, "luca.rossi@gmail.com", "l.rossi2022", true, $card, null, []);
     $croccantini = new Food("5kg", "2025/04/02", "croccantini", "Food", 9.99, "gatto");
