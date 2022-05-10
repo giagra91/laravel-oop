@@ -28,7 +28,7 @@
     @php
         function testExcep($test){
             if(is_numeric($test)){
-                throw new Exception ("Il valore inserito è un numero");
+                throw new Exception ("Errore 0000000x25: il valore inserito è un numero");
             } else {
                 echo "Valore corretto, hai inserito una stringa.";
             }
@@ -41,7 +41,7 @@
             try{
                 echo testExcep(456);
             } catch (Exception $e){
-                echo "Eccezione 00000000x25: " . $e->getMessage();
+                echo $e->getMessage();
             }
         @endphp
     </p>
