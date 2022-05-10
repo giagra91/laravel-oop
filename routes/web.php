@@ -23,6 +23,9 @@ trait Position{
     }
 
     public function setPosition(float $lat, float $lng){
+        if(!is_numeric($lat) && !is_numeric($lng)){
+            throw new Exception("I valori inseriti non sono numerici");
+        }
         $this->lat = $lat;
         $this->lng = $lng;
     }

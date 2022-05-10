@@ -23,5 +23,37 @@
         $utente->setPosition(4562.6, 46587112.0010);
     @endphp
     @dump($utente)
+
+    @php
+        function testExcep($test){
+            if(is_numeric($test)){
+                throw new Exception ("Il valore inserito è un numero");
+            } else {
+                echo "Valore corretto, hai inserito una stringa.";
+            }
+        }
+    @endphp
+
+    <p>
+        @php
+            // Testare eccezione su valore errato inserito
+            try{
+                echo testExcep(456);
+            } catch (Exception $e){
+                echo "Eccezione 00000000x25: " . $e->getMessage();
+            }
+        @endphp
+    </p>
+
+    <p>
+        @php
+            // Testare else su valore corretto inserito come argomento della funzione
+            try{
+                echo testExcep("prova");
+            } catch (Exception $e){
+                echo "Eccezione: " . $e->getMessage();
+            }
+        @endphp
+    </p>
 </body>
 </html>
