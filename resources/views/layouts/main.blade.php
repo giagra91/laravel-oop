@@ -55,6 +55,10 @@
                 echo "Eccezione: " . $e->getMessage();
             }
         @endphp
+        <br>
+        @php
+            echo $croccantini->getName();
+        @endphp
     </p>
 </body>
 </html>

@@ -75,6 +75,11 @@ class Food extends Product{
         $this->expireDate = $expireDate;
     }
 
+
+    function getName(){
+        return $this->name . " prova polimorfismo parent - figlio";
+    }
+
     function getWeight(){
         return $this->weight;
     }
